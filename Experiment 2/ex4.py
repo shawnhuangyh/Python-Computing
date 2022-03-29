@@ -8,7 +8,6 @@ def get_reduced(word):
 
 
 def is_reducible(word):
-    global max_len, max_len_word
     if len(word) > 1:
         for reduced in get_reduced(word):
             if reduced in succeed_word or is_reducible(reduced) is True:
@@ -17,9 +16,6 @@ def is_reducible(word):
             failed_word.add(word)
             return False
     succeed_word.add(word)
-    if len(word) > max_len:
-        max_len = len(word)
-        max_len_word = word
     return True
 
 
@@ -36,6 +32,11 @@ if __name__ == '__main__':
 
     for i in word_set:
         is_reducible(i)
+
+    for i in succeed_word:
+        if len(i) > max_len:
+            max_len = len(i)
+            max_len_word = i
 
     print(succeed_word)
     print("Max length reducible word is " + max_len_word + ", its length is " + str(max_len))
