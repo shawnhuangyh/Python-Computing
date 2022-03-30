@@ -38,4 +38,4 @@ if __name__ == '__main__':
             max_len = len(i)
             max_len_word = i
 
-    print("Word:" + max_len_word + ", Time:" + str(max_len))
+    print("Word: " + max_len_word + ", Length: " + str(max_len))
