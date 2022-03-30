@@ -38,5 +38,4 @@ if __name__ == '__main__':
             max_len = len(i)
             max_len_word = i
 
-    print(succeed_word)
     print("Max length reducible word is " + max_len_word + ", its length is " + str(max_len))
