@@ -1,4 +1,5 @@
 import random
+import matplotlib as plt
 
 
 def sum_same_birthday(student):
@@ -12,9 +13,7 @@ def sum_same_birthday(student):
     return False
 
 
-if __name__ == '__main__':
-    m = int(input("Input class numbers(M):"))
-    n = int(input("Input student numbers in each class(N):"))
+def get_calculation(m, n):
     q = 0
     for i in range(m):
         if sum_same_birthday(n):
@@ -23,3 +22,9 @@ if __name__ == '__main__':
     p = q / m
     print("Q={}".format(q))
     print("P={}".format(p))
+    return p
+
+
+if __name__ == '__main__':
+    m = int(input("Input class numbers(M):"))
+    n = int(input("Input student numbers in each class(N):"))
