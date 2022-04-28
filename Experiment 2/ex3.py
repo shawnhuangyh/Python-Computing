@@ -33,7 +33,7 @@ if __name__ == '__main__':
     else:
         x = list()
         y = list()
-        m = 100
+        m = 1000
         for i in range(300):
             p, q = get_calculation(m, i)
             x.append(i)
