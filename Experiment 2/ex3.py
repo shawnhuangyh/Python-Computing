@@ -12,14 +12,18 @@ def sum_same_birthday(student):
     return False
 
 
-if __name__ == '__main__':
-    m = int(input("Input class numbers(M):"))
-    n = int(input("Input student numbers in each class(N):"))
+def get_calculation(m, n):
     q = 0
     for i in range(m):
         if sum_same_birthday(n):
             q += 1
-
     p = q / m
+    return p, q
+
+
+if __name__ == '__main__':
+    m = int(input("Input class numbers(M):"))
+    n = int(input("Input student numbers in each class(N):"))
+    p, q = get_calculation(m, n)
     print("Q={}".format(q))
     print("P={}".format(p))
