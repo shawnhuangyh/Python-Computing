@@ -79,7 +79,27 @@ class Time:
 
 
 if __name__ == '__main__':
+    # 创建时间实例
     a = Time(12, 22, 30)
     b = Time(11, 50, 10)
+    # 输出时间
+    print("输出时间：", end="")
+    print(a)
+    # 时间相加
+    print("时间相加：", end="")
     c = a + b
+    print(c)
+    # 时间转化为秒
+    print("时间转换为秒：", end="")
+    print(a, ":", a.time2int())
+    # 判断时间先后
+    print("判断时间先后：", end="")
+    print("A和B时间相比：", a.isafter(b))
+    # 经过n秒
+    print("时间经过n秒：", end="")
+    print(a, "经过250秒为：", a.increment(250))
+    # 判断时间合法
+    print("时间合法：")
     print(a.isvalid())
+    c = Time(25, 22, 67)
+    print(c.isvalid())
