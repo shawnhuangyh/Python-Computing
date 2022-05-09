@@ -34,8 +34,8 @@ class Lunch:
         self.customer.printOrder()
 
 
-if __name__ == '__main__':
-    c = Customer()
-    e = Employee()
-    c.placeOrder("test", e)
-    c.printOrder()
+# if __name__ == '__main__':
+#     c = Customer()
+#     e = Employee()
+#     c.placeOrder("test", e)
+#     c.printOrder()
