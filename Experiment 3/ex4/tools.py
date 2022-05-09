@@ -1,9 +1,10 @@
 class Customer:
     def __init__(self):
-        self.food = None
+        # self.food = None
+        self.food = []
 
     def placeOrder(self, food, employee):
-        self.food = employee.takeOrder(food)
+        self.food.append(employee.takeOrder(food))
 
     def getOrder(self):
         return self.food
@@ -32,7 +33,6 @@ class Lunch:
 
     def result(self):
         return self.customer.getOrder()
-
 
 # if __name__ == '__main__':
 #     c = Customer()
