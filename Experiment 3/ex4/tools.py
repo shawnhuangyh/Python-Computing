@@ -5,8 +5,8 @@ class Customer:
     def placeOrder(self, food, employee):
         self.food = employee.takeOrder(food)
 
-    def printOrder(self):
-        print(self.food)
+    def getOrder(self):
+        return self.food
 
 
 class Employee:
@@ -31,7 +31,7 @@ class Lunch:
         self.customer.placeOrder(food, self.employee)
 
     def result(self):
-        self.customer.printOrder()
+        self.customer.getOrder()
 
 
 # if __name__ == '__main__':
