@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QFile
 from PySide6.QtUiTools import QUiLoader
 from MainWindowUI import Ui_MainWindow
-from tools import *
+from Tools import *
 
 
 class MainWindow(QMainWindow):
