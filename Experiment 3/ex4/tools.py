@@ -31,7 +31,7 @@ class Lunch:
         self.customer.placeOrder(food, self.employee)
 
     def result(self):
-        self.customer.getOrder()
+        return self.customer.getOrder()
 
 
 # if __name__ == '__main__':
