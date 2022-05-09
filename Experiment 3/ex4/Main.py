@@ -3,6 +3,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QFile
 from PySide6.QtUiTools import QUiLoader
 from MainWindowUI import Ui_MainWindow
+from ShowOrderUI import Ui_OrderInfoWindow
 from Tools import *
 
 
@@ -47,8 +48,22 @@ class MainWindow(QMainWindow):
         else:
             for i in foodlist:
                 out += str(i) + " "
+        popwindow = PopUpWindow()
+        popwindow.modify(out)
+        popwindow.show()
+        popwindow.exec()
 
         print(out)
+
+
+class PopUpWindow(QMainWindow):
+    def __init__(self):
+        super(PopUpWindow, self).__init__()
+        self.ui = Ui_OrderInfoWindow()
+        self.ui.setupUi(self)
+
+    def modify(self, out):
+        self.ui.data.setText(out)
 
 
 if __name__ == "__main__":
