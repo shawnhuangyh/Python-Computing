@@ -9,50 +9,48 @@ def rotateword(strsrc, n):
 
 
 def avoids(word, ban):
-    lowerword = word.lower()
-    for i in lowerword:
-        up = i.upper()
-        if i in ban or up in ban:
-            return True
+    word = word.lower()
+    ban = ban.lower()
+    regex = re.compile("[%s]" % ban)
+    if regex.search(word):
+        return True
     else:
         return False
 
 
 def useonly(word, allow):
-    lowerword = word.lower()
-    for i in lowerword:
-        up = i.upper()
-        if i not in allow and up not in allow:
-            return False
+    word = word.lower()
+    allow = allow.lower()
+    regex = re.compile("[^%s]" % allow)
+    if regex.search(word):
+        return False
     else:
         return True
 
 
 def useall(word, allow):
-    allowword = set(i.lower() for i in allow)
-    lowerword = word.lower()
-    for i in lowerword:
-        if i in allowword:
-            allowword.remove(i)
-    if len(allowword) == 0:
-        return True
-    else:
+    word = word.lower()
+    allow = allow.lower()
+    regex = re.compile("[^%s]" % word)
+    if regex.search(allow):
         return False
+    else:
+        return True
 
 
 def hasnoe(word):
-    lowerword = word.lower()
-    for i in lowerword:
-        if i == "e":
-            return False
+    word = word.lower()
+    regex = re.compile("[e]")
+    if regex.search(word):
+        return False
     else:
         return True
 
 
 def isabecedarian(word):
-    lowerword = word.lower()
-    for i in range(len(lowerword) - 1):
-        if lowerword[i] > lowerword[i + 1]:
+    word = word.lower()
+    for i in range(len(word) - 1):
+        if word[i] > word[i + 1]:
             return False
     else:
         return True
@@ -81,7 +79,8 @@ if __name__ == '__main__':
         text = f.read().split()
     for i in text:
         if useall(i, "aeiou"):
-            print(i)
+            print(i, end=" ")
+    print()
 
     # hasnoe
     print("=========================================================================================")
@@ -101,4 +100,5 @@ if __name__ == '__main__':
     print("Is 'Abcde' abecedarian: {}".format(isabecedarian("Abcde")))
     for i in text:
         if isabecedarian(i):
-            print(i)
+            print(i, end=" ")
+    print()

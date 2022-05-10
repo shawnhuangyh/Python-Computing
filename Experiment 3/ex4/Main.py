@@ -51,9 +51,7 @@ class MainWindow(QMainWindow):
         popwindow = PopUpWindow()
         popwindow.modify(out)
         popwindow.show()
-        popwindow.exec()
-
-        print(out)
+        sys.exit(popwindow.exec())
 
 
 class PopUpWindow(QMainWindow):
