@@ -14,6 +14,7 @@ class Ack:
         self.n = n
 
 
+# 非递归实现
 def Ackermann(m, n):
     stack = []
     x = Ack(m, n)
