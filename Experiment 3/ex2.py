@@ -9,7 +9,7 @@ class Time:
 
     def __add__(self, x):
         if isinstance(x, Time):
-            if self.isvalid() == False or x.isvalid() == False:
+            if self.isvalid() is False or x.isvalid() is False:
                 return
             a = Time()
             # Add second
@@ -35,7 +35,7 @@ class Time:
 
     def isafter(self, x):
         if isinstance(x, Time):
-            if self.isvalid() == False or x.isvalid() == False:
+            if self.isvalid() is False or x.isvalid() is False:
                 return
             if self.__hour > x.__hour:
                 return 1
@@ -56,7 +56,7 @@ class Time:
 
     def increment(self, n):
         if isinstance(n, int) and n > 0:
-            if self.isvalid() == False:
+            if self.isvalid() is False:
                 return
             second = n % 60
             minute = (n // 60) % 60
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     print(c)
     # 时间转化为秒
     print("时间转换为秒：", end="")
-    print(a, ":", a.time2int())
+    print(a, "=", a.time2int())
     # 判断时间先后
     print("判断时间先后：", end="")
     print("A和B时间相比：", a.isafter(b))
