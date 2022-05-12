@@ -1,4 +1,10 @@
+import sys
+from functools import lru_cache
+
+
 # 递归实现
+
+@lru_cache(maxsize=None)
 def AckermannRecursion(m, n):
     if m == 0:
         return n + 1
@@ -41,5 +47,8 @@ def Ackermann(m, n):
 
 
 if __name__ == '__main__':
-    print(AckermannRecursion(3, 4))
+    sys.setrecursionlimit(2147483647)
+    for i in range(5):
+        for j in range(20):
+            print("Ack({}, {}) = {}".format(i, j, AckermannRecursion(i, j)))
     print(Ackermann(3, 4))
